@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gombalan Lucu Buat Ayang</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffe0b2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        h1 {
+            color: #ff7043;
+            font-size: 3em;
+        }
+
+        .gombalan {
+            font-size: 1.5em;
+            color: #ff5722;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #ff7043;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #f4511e;
+        }
+
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('https://i.imgur.com/I6Y2Z9a.png'); /* gambar hati kecil */
+            background-size: cover;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gombalan Lucu Buat Kamu</h1>
+        <p class="gombalan" id="gombalan-text">Klik tombol di bawah untuk lihat gombalan!</p>
+        <button onclick="tampilkanGombalan()">Gombalin Aku</button>
+        <div class="heart" style="top: -40px; left: 50%; transform: translateX(-50%);"></div>
+    </div>
+
+    <script>
+        const gombalanList = [
+            "Kalau aku jadi burung, aku nggak akan terbang. Soalnya, aku cuma mau terbang ke hatimu.",
+            "Kamu tau nggak? Setiap kali kamu senyum, itu seperti diskon 90% di hari gajian. Bikin bahagia!",
+            "Kamu itu kayak sandal jepit, sederhana, tapi selalu bikin nyaman.",
+            "Aku nggak butuh alarm, soalnya bayangin wajah kamu aja udah cukup buat bangunin aku tiap pagi.",
+            "Kalau cinta ibarat kopi, kamu adalah gula yang bikin hidupku jadi lebih manis."
+        ];
+
+        function tampilkanGombalan() {
+            const randomIndex = Math.floor(Math.random() * gombalanList.length);
+            const gombalanText = document.getElementById("gombalan-text");
+            gombalanText.innerHTML = gombalanList[randomIndex];
+        }
+    </script>
+</body>
+</html>
